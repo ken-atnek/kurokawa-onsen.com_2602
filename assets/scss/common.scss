@@ -1,12 +1,10 @@
 @use "reset_v2.5" as *;
 @use "variable" as *;
+@use "mixin" as *;
 
-// @import "swiper/css";
-// @import "swiper/css/navigation";
 body {
     @include SunSerif;
-
-    // font-feature-settings: "palt";
+    font-feature-settings: "palt";
     font-size: clamp(1.2rem, calc($base-vw * 1vw) + calc($slice * 1px), 1.6rem);
     margin: 0;
     padding: 0;
@@ -27,6 +25,35 @@ body {
     @include sp {
         font-size: 3.6vw;
     }
+    // 画像右クリック・ドラッグ禁止
+    img {
+        width: 100%;
+        user-drag: none;
+        -webkit-user-drag: none;
+        -moz-user-select: none;
+        pointer-events: none;
+    }
+    // PCサイトTELリンク非アクティブ
+    @media (min-width: 768px) {
+        a[href*="tel:"] {
+            pointer-events: none;
+            cursor: default;
+            text-decoration: none;
+        }
+    }
+    br {
+        &.pc {
+            @include sp {
+                display: none;
+            }
+        }
+        &.sp {
+            display: none;
+            @include sp {
+                display: inline;
+            }
+        }
+    }
 }
 main {
     font-size: inherit;
@@ -34,7 +61,6 @@ main {
     width: 100%;
     display: flex;
     flex-direction: column;
-    background-color: #fffbf4;
 }
 section,
 article,
@@ -63,12 +89,73 @@ br {
         }
     }
 }
-input {
-    margin: 0;
-    padding: 0;
-    background: none;
-    border: none;
-    border-radius: 0;
-    outline: none;
-    appearance: none;
+header {
+    position: relative;
+    font-size: inherit;
+    display: flex;
+    justify-content: space-between;
+    height: 10rem;
+    padding-left: 6vw;
+    gap: 0 3em;
+    h1 {
+        font-size: FZ(32);
+        font-weight: 700;
+        align-self: center;
+        letter-spacing: 0.1em;
+    }
+    nav {
+        margin-left: auto;
+        align-self: center;
+        font-size: inherit;
+        display: flex;
+        align-items: center;
+        gap: 0 2em;
+        a {
+            font-size: FZ(18);
+            letter-spacing: 0.1em;
+        }
+    }
+    .link-contact {
+        background-color: $main-red;
+        font-size: FZ(16);
+        @include flex-center;
+        color: $base-white;
+        padding-inline: 2em;
+    }
+}
+footer {
+    position: relative;
+    font-size: inherit;
+    display: flex;
+    justify-content: space-between;
+    background-color: $main-red;
+    color: $base-white;
+    padding: 4.6rem 4vw;
+    gap: 0 3em;
+    .title {
+        font-size: FZ(32);
+        font-weight: 700;
+        align-self: center;
+        letter-spacing: 0.1em;
+    }
+    nav {
+        margin-left: auto;
+        align-self: center;
+        font-size: inherit;
+        display: flex;
+        align-items: center;
+        gap: 0 2em;
+        a {
+            font-size: FZ(18);
+            letter-spacing: 0.1em;
+        }
+    }
+    .link-contact {
+        background-color: $base-white;
+        font-size: FZ(16);
+        @include flex-center;
+        color: $main-red;
+        padding-inline: 2em;
+        height: 10rem;
+    }
 }

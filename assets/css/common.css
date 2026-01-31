@@ -200,12 +200,19 @@ button {
 /* =================================
  * フォント設定
  * ------------------------------ */
+@font-face {
+  font-display: swap;
+  font-family: "Noto Sans JP";
+  @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap");
+}
+@font-face {
+  font-display: swap;
+  font-family: "Roboto";
+  @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+}
 /* フォント設定 */
 /* =================================
  * カラー変数
- * ------------------------------ */
-/* =================================
- *  サイズ変数
  * ------------------------------ */
 /* =================================
  * レスポンシブ設定
@@ -214,9 +221,10 @@ button {
  * ホバー処理
  * ------------------------------ */
 body {
-  font-family: Roboto, "Noto Sans JP", "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "BIZ UDPGothic", Meiryo, sans-serif;
+  font-family: "Roboto", "Noto Sans JP", "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "BIZ UDPGothic", Meiryo, sans-serif;
   font-weight: 400;
   font-style: normal;
+  font-feature-settings: "palt";
   font-size: clamp(1.2rem, 0.6163328197vw + 9.688751926px, 1.6rem);
   margin: 0;
   padding: 0;
@@ -226,8 +234,8 @@ body {
   min-height: 100vh;
   justify-content: space-between;
   width: 100%;
-  color: #574232;
-  background-color: #fffbf4;
+  color: #000e21;
+  background-color: #faf9f6;
 }
 @media (max-width: 1194px) and (orientation: landscape) {
   body {
@@ -244,6 +252,33 @@ body {
     font-size: 3.6vw;
   }
 }
+body img {
+  width: 100%;
+  user-drag: none;
+  -webkit-user-drag: none;
+  -moz-user-select: none;
+  pointer-events: none;
+}
+@media (min-width: 768px) {
+  body a[href*="tel:"] {
+    pointer-events: none;
+    cursor: default;
+    text-decoration: none;
+  }
+}
+@media (max-width: 480px) and (orientation: portrait) {
+  body br.pc {
+    display: none;
+  }
+}
+body br.sp {
+  display: none;
+}
+@media (max-width: 480px) and (orientation: portrait) {
+  body br.sp {
+    display: inline;
+  }
+}
 
 main {
   font-size: inherit;
@@ -251,7 +286,6 @@ main {
   width: 100%;
   display: flex;
   flex-direction: column;
-  background-color: #fffbf4;
 }
 
 section,
@@ -284,14 +318,82 @@ br.sp {
   }
 }
 
-input {
-  margin: 0;
-  padding: 0;
-  background: none;
-  border: none;
-  border-radius: 0;
-  outline: none;
-  appearance: none;
+header {
+  position: relative;
+  font-size: inherit;
+  display: flex;
+  justify-content: space-between;
+  height: 10rem;
+  padding-left: 6vw;
+  gap: 0 3em;
+}
+header h1 {
+  font-size: max(12px, 2em);
+  font-weight: 700;
+  align-self: center;
+  letter-spacing: 0.1em;
+}
+header nav {
+  margin-left: auto;
+  align-self: center;
+  font-size: inherit;
+  display: flex;
+  align-items: center;
+  gap: 0 2em;
+}
+header nav a {
+  font-size: max(12px, 1.125em);
+  letter-spacing: 0.1em;
+}
+header .link-contact {
+  background-color: #821900;
+  font-size: max(12px, 1em);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  color: #faf9f6;
+  padding-inline: 2em;
+}
+
+footer {
+  position: relative;
+  font-size: inherit;
+  display: flex;
+  justify-content: space-between;
+  background-color: #821900;
+  color: #faf9f6;
+  padding: 4.6rem 4vw;
+  gap: 0 3em;
+}
+footer .title {
+  font-size: max(12px, 2em);
+  font-weight: 700;
+  align-self: center;
+  letter-spacing: 0.1em;
+}
+footer nav {
+  margin-left: auto;
+  align-self: center;
+  font-size: inherit;
+  display: flex;
+  align-items: center;
+  gap: 0 2em;
+}
+footer nav a {
+  font-size: max(12px, 1.125em);
+  letter-spacing: 0.1em;
+}
+footer .link-contact {
+  background-color: #faf9f6;
+  font-size: max(12px, 1em);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  color: #821900;
+  padding-inline: 2em;
+  height: 10rem;
 }
 
 /*# sourceMappingURL=common.css.map */

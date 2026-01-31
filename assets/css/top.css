@@ -1,0 +1,293 @@
+@charset "UTF-8";
+/* =================================
+ * 	ウィンドウ・フォントサイズ設定
+ * ------------------------------ */
+/* =================================
+ * フォント設定
+ * ------------------------------ */
+@font-face {
+  font-display: swap;
+  font-family: "Noto Sans JP";
+  @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap");
+}
+@font-face {
+  font-display: swap;
+  font-family: "Roboto";
+  @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+}
+/* フォント設定 */
+/* =================================
+ * カラー変数
+ * ------------------------------ */
+/* =================================
+ * レスポンシブ設定
+ * ------------------------------ */
+/* =================================
+ * ホバー処理
+ * ------------------------------ */
+.item-h2 {
+  position: relative;
+  font-size: max(12px, 1.5em);
+  font-weight: 700;
+  letter-spacing: 0.5em;
+  padding-top: 3rem;
+}
+.item-h2::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  translate: -50%;
+  width: 6rem;
+  height: 3px;
+  background-color: #fe3101;
+}
+
+.container-hero {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.container-hero img {
+  aspect-ratio: 1366/474;
+  object-fit: cover;
+}
+.container-hero article {
+  display: flex;
+  max-width: 1000px;
+  padding-block: 3rem;
+}
+.container-hero article h2 {
+  font-size: max(12px, 1.5em);
+  font-weight: 600;
+  letter-spacing: 0.5em;
+  border-right: 3px solid #fe3101;
+  padding-block: 1.8rem;
+  padding-right: 1em;
+}
+.container-hero article .box-details {
+  align-self: center;
+  padding-left: 3em;
+  font-size: inherit;
+  display: flex;
+  align-items: center;
+  gap: 0 4rem;
+}
+.container-hero article .box-details span {
+  font-size: max(12px, 0.875em);
+}
+.container-hero article .box-details p,
+.container-hero article .box-details a {
+  font-size: max(12px, 1.25em);
+  letter-spacing: 0.1em;
+}
+
+.container-shop-list {
+  background-color: #232323;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 7.4rem 4vw 8.3rem;
+}
+.container-shop-list .item-h2 {
+  color: #faf9f6;
+}
+.container-shop-list ul {
+  position: relative;
+  font-size: 1em;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3em 1.4em;
+  max-width: 1000px;
+  margin-top: 7.2rem;
+}
+@media (max-width: 480px) and (orientation: portrait) {
+  .container-shop-list ul {
+    grid-template-columns: unset;
+    grid-auto-flow: row;
+    gap: 14vw 0;
+  }
+}
+.container-shop-list ul > li {
+  position: relative;
+  font-size: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1em 0;
+  color: #faf9f6;
+}
+.container-shop-list ul > li .box_photo {
+  position: relative;
+  font-size: 1em;
+}
+.container-shop-list ul > li .box_photo img {
+  aspect-ratio: 1.5;
+  object-fit: cover;
+}
+.container-shop-list ul > li .box_photo .link_info {
+  position: absolute;
+  inset: 0;
+}
+.container-shop-list ul > li .box_contents {
+  font-size: 1em;
+  display: flex;
+  flex-direction: column;
+  font-family: "Zen Old Mincho", "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝Pro", "Hiragino Mincho Pro", "MS P明朝", "MS PMincho", serif;
+  font-weight: 400;
+  font-style: normal;
+  gap: 0.5em 0;
+  justify-content: space-between;
+  flex: 1;
+}
+.container-shop-list ul > li .box_contents .title {
+  font-size: max(12px, 1.25em);
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.container-shop-list ul > li .box_contents p {
+  font-size: max(12px, 0.875em);
+  text-align: justify;
+  letter-spacing: 0.08em;
+  line-height: 1.6em;
+  flex: 1;
+  display: -webkit-box; /* 必須 */
+  -webkit-box-orient: vertical; /* 必須 */
+  -webkit-line-clamp: 2;
+  line-clamp: 2; /* 行数を制限 */
+  overflow: hidden;
+}
+.container-shop-list ul > li .box_contents .wrap_tel {
+  font-size: 1em;
+  display: flex;
+  align-items: center;
+  gap: 0 1.6em;
+  border-top: 1px solid #707070;
+}
+.container-shop-list ul > li .box_contents .wrap_tel a {
+  font-size: max(12px, 0.875em);
+  letter-spacing: 0.08em;
+}
+.container-shop-list ul > li .box_contents .wrap_tel a.tel::before {
+  content: "Tel:";
+}
+.container-shop-list ul > li .box_contents .wrap_tel a.fax::before {
+  content: "Fax:";
+}
+.container-shop-list .link-page {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-size: max(12px, 1em);
+  letter-spacing: 0.2em;
+  width: 100%;
+  max-width: 84rem;
+  height: 6.8rem;
+  background-color: #faf9f6;
+  color: #000e21;
+  border-radius: 1rem;
+  font-weight: 500;
+  margin-top: 5rem;
+}
+
+.container-map {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 4.8rem 4vw 7.2rem;
+}
+.container-map .block_head-mage {
+  position: relative;
+  font-size: inherit;
+  max-width: 1000px;
+  margin-top: 5rem;
+}
+@media (max-width: 480px) and (orientation: portrait) {
+  .container-map .block_head-mage {
+    display: flex;
+    flex-direction: column;
+    gap: 4vw 0;
+  }
+}
+.container-map .block_head-mage img {
+  width: 100%;
+}
+.container-map .block_head-mage > a {
+  position: absolute;
+  bottom: 1em;
+  right: 1em;
+  background-color: #0089ff;
+  font-size: max(12px, 1em);
+  color: #fff;
+  font-family: "Zen Old Mincho", "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝Pro", "Hiragino Mincho Pro", "MS P明朝", "MS PMincho", serif;
+  font-weight: 400;
+  font-style: normal;
+  padding: 1em 2em;
+  border-radius: 0.4rem;
+}
+@media (max-width: 480px) and (orientation: portrait) {
+  .container-map .block_head-mage > a {
+    position: static;
+    bottom: unset;
+    right: unset;
+    width: stretch;
+    margin-inline: 4vw;
+    display: grid;
+    place-items: center;
+  }
+}
+
+.container-overview {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 4.8rem 4vw 7.2rem;
+  background: url(../image/top/bg-overview.webp) no-repeat center center/cover;
+}
+.container-overview dl {
+  position: relative;
+  width: 100%;
+  max-width: 1000px;
+  border: 1px solid #000e21;
+  background-color: #faf9f6;
+  font-size: inherit;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  margin-top: 4rem;
+}
+.container-overview dl div {
+  position: relative;
+  font-size: inherit;
+  grid-column: span 2;
+  display: grid;
+  grid-template-columns: subgrid;
+}
+.container-overview dl div:not(:last-of-type) {
+  border-bottom: 1px solid;
+}
+.container-overview dl div dt {
+  background-color: #ededed;
+  font-size: max(12px, 1.25em);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 4rem 6rem;
+}
+.container-overview dl div dd {
+  font-size: max(12px, 1.25em);
+  display: flex;
+  flex-direction: column;
+  padding: 4rem 6rem;
+}
+.container-overview dl div dd a,
+.container-overview dl div dd span,
+.container-overview dl div dd address {
+  font-size: inherit;
+}
+
+/*# sourceMappingURL=top.css.map */

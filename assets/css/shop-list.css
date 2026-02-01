@@ -1,0 +1,299 @@
+@charset "UTF-8";
+/* =================================
+ * 	ウィンドウ・フォントサイズ設定
+ * ------------------------------ */
+/* =================================
+ * フォント設定
+ * ------------------------------ */
+@font-face {
+  font-display: swap;
+  font-family: "Noto Sans JP";
+  @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap");
+}
+@font-face {
+  font-display: swap;
+  font-family: "Roboto";
+  @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+}
+/* フォント設定 */
+/* =================================
+ * カラー変数
+ * ------------------------------ */
+/* =================================
+ * レスポンシブ設定
+ * ------------------------------ */
+/* =================================
+ * ホバー処理
+ * ------------------------------ */
+.container-hero {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.container-hero img {
+  aspect-ratio: 5;
+  object-fit: cover;
+  width: 100%;
+}
+@media (max-width: 480px) and (orientation: portrait) {
+  .container-hero img {
+    aspect-ratio: 3;
+  }
+}
+
+/*=======================================
+加盟店一覧
+---------------------------------------*/
+.container_shop-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-inline: 4vw;
+  padding-bottom: 8rem;
+}
+.container_shop-list > nav {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-flow: 0 1.6em;
+  padding: 2em 0 3em;
+  margin-top: unset;
+  font-size: inherit;
+  gap: 0 1em;
+  width: 100%;
+  max-width: 1000px;
+}
+@media (max-width: 480px) and (orientation: portrait) {
+  .container_shop-list > nav {
+    grid-template-columns: unset;
+    grid-auto-flow: row;
+    gap: 2vw 0;
+    justify-content: center;
+    padding: 2vw 0 6vw;
+    margin-top: unset;
+  }
+}
+.container_shop-list > nav > a {
+  position: relative;
+  font-size: max(12px, 1.125em);
+  letter-spacing: 0.04em;
+  font-family: "Zen Old Mincho", "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝Pro", "Hiragino Mincho Pro", "MS P明朝", "MS PMincho", serif;
+  font-weight: 400;
+  font-style: normal;
+  background-color: #821900;
+  color: #fff;
+  display: grid;
+  place-items: center;
+  height: 2.8em;
+}
+@media (max-width: 480px) and (orientation: portrait) {
+  .container_shop-list > nav > a {
+    width: 80vw;
+  }
+}
+.container_shop-list > nav > a::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  translate: 0 -50%;
+  right: 1em;
+  width: 1em;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 16" fill="%23ffffff"><polygon points="18 7.99 10.25 0 9.57 .71 16.15 7.5 0 7.5 0 8.5 16.15 8.5 9.57 15.29 10.25 16 18 8.01 17.99 8 18 7.99" /></svg>');
+  aspect-ratio: 1.125;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+  rotate: 90deg;
+}
+.container_shop-list > article {
+  background-color: #821900;
+  padding: 2em;
+  margin-top: 1.6em;
+  max-width: 1000px;
+}
+@media (max-width: 480px) and (orientation: portrait) {
+  .container_shop-list > article {
+    padding: 4vw;
+  }
+}
+.container_shop-list > article .view-block {
+  position: relative;
+  font-size: 1em;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  color: #faf9f6;
+  gap: 3em 1.4em;
+}
+@media (max-width: 480px) and (orientation: portrait) {
+  .container_shop-list > article .view-block {
+    grid-template-columns: unset;
+    grid-auto-flow: row;
+    gap: 14vw 0;
+  }
+}
+.container_shop-list > article .view-block > li {
+  position: relative;
+  font-size: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1em 0;
+}
+.container_shop-list > article .view-block > li .box_photo {
+  position: relative;
+  font-size: 1em;
+}
+.container_shop-list > article .view-block > li .box_photo img {
+  aspect-ratio: 1.5;
+  object-fit: cover;
+}
+.container_shop-list > article .view-block > li .box_photo .link_info {
+  position: absolute;
+  inset: 0;
+}
+.container_shop-list > article .view-block > li .box_contents {
+  font-size: 1em;
+  display: flex;
+  flex-direction: column;
+  font-family: "Zen Old Mincho", "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝Pro", "Hiragino Mincho Pro", "MS P明朝", "MS PMincho", serif;
+  font-weight: 400;
+  font-style: normal;
+  gap: 0.5em 0;
+  justify-content: space-between;
+  flex: 1;
+}
+.container_shop-list > article .view-block > li .box_contents .title {
+  font-size: max(12px, 1.25em);
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.container_shop-list > article .view-block > li .box_contents .title .link_official {
+  position: relative;
+  font-size: 1em;
+  width: 1em;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17 15" fill="none"><path d="M5.21,1.52h10.27v8.64H5.21V1.52ZM3.68,11.67h13.32V0H3.68v11.67Z" fill="%23ffffff"/><path d="M0,2.58v12.42h14.09v-1.52H1.53V2.58H0Z" fill="%23ffffff"/></svg>');
+  aspect-ratio: 17/15;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+}
+.container_shop-list > article .view-block > li .box_contents p {
+  font-size: max(12px, 0.875em);
+  text-align: justify;
+  letter-spacing: 0.08em;
+  line-height: 1.6em;
+  flex: 1;
+}
+.container_shop-list > article .view-block > li .box_contents .wrap_price {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  font-size: 1em;
+}
+.container_shop-list > article .view-block > li .box_contents .wrap_price::before {
+  flex: 1;
+  content: "";
+  height: 1px;
+  border-top: solid 1px #5f5f5f;
+  margin-right: 1em;
+}
+.container_shop-list > article .view-block > li .box_contents .wrap_price .inner {
+  position: relative;
+  font-size: 1em;
+  display: flex;
+  align-items: center;
+}
+.container_shop-list > article .view-block > li .box_contents .wrap_price .inner span {
+  font-size: max(12px, 0.875em);
+  letter-spacing: 0.08em;
+}
+.container_shop-list > article .view-block > li .box_contents .wrap_price .inner span:first-of-type::before {
+  content: "価格帯：";
+}
+.container_shop-list > article .view-block > li .box_contents .wrap_price .inner span:first-of-type::after {
+  content: "~";
+  margin-inline: 0.2em;
+}
+.container_shop-list > article .view-block > li .box_contents .wrap_tel {
+  font-size: 1em;
+  display: flex;
+  align-items: center;
+  gap: 0 1.6em;
+}
+.container_shop-list > article .view-block > li .box_contents .wrap_tel a {
+  font-size: max(12px, 0.875em);
+  letter-spacing: 0.08em;
+}
+.container_shop-list > article .view-block > li .box_contents .wrap_tel a.tel::before {
+  content: "Tel:";
+}
+.container_shop-list > article .view-block > li .box_contents .wrap_tel a.fax::before {
+  content: "Fax:";
+}
+.container_shop-list h3 {
+  color: #fff;
+  font-size: max(12px, 2em);
+  font-family: "Zen Old Mincho", "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝Pro", "Hiragino Mincho Pro", "MS P明朝", "MS PMincho", serif;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 0.08em;
+}
+.container_shop-list .h3_sidebar {
+  font-size: max(12px, 1em);
+  font-family: "Zen Old Mincho", "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝Pro", "Hiragino Mincho Pro", "MS P明朝", "MS PMincho", serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #fff;
+  margin-top: 0.5em;
+  margin-bottom: 2em;
+  letter-spacing: 0.08em;
+}
+.container_shop-list .wrap_tel {
+  border-top: 1px solid #707070;
+  padding-top: 0.5em;
+}
+.container_shop-list .box_contents p {
+  max-height: 3lh;
+  position: relative;
+  overflow-y: hidden;
+}
+.container_shop-list .box_contents p::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 70%;
+  background-image: linear-gradient(to top, #821900, rgba(130, 25, 0, 0));
+}
+.container_shop-list .view-block.lang-en {
+  margin-top: 1em;
+}
+.container_shop-list .view-block.lang-en .box_contents .title {
+  font-family: "Roboto", "Noto Sans JP", "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "BIZ UDPGothic", Meiryo, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: max(12px, 1.25em);
+  font-weight: 700;
+}
+.container_shop-list .view-block.lang-en .box_contents p {
+  max-height: unset;
+  position: relative;
+  overflow-y: hidden;
+  font-family: "Roboto", "Noto Sans JP", "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "BIZ UDPGothic", Meiryo, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.4em;
+}
+.container_shop-list .view-block.lang-en .box_contents p::after {
+  display: none;
+}
+.container_shop-list .view-block.lang-en .box_contents .tel::before {
+  content: "Phone:" !important;
+}
+
+/*# sourceMappingURL=shop-list.css.map */

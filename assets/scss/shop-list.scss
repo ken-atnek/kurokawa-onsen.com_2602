@@ -1,0 +1,261 @@
+@use "variable" as *;
+@use "mixin" as *;
+@use "svg" as *;
+.container-hero {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    img {
+        aspect-ratio: 5;
+        object-fit: cover;
+        width: 100%;
+        @include sp {
+            aspect-ratio: 3;
+        }
+    }
+}
+/*=======================================
+加盟店一覧
+---------------------------------------*/
+
+.container_shop-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-inline: 4vw;
+    padding-bottom: 8rem;
+    & > nav {
+        position: relative;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-auto-flow: 0 1.6em;
+        padding: 2em 0 3em;
+        margin-top: unset;
+        font-size: inherit;
+        gap: 0 1em;
+        width: 100%;
+        max-width: $articleMaxWidth;
+        @include sp {
+            grid-template-columns: unset;
+            grid-auto-flow: row;
+            gap: 2vw 0;
+            justify-content: center;
+            padding: 2vw 0 6vw;
+            margin-top: unset;
+        }
+        & > a {
+            position: relative;
+            font-size: FZ(18);
+            letter-spacing: 0.04em;
+            @include Serif;
+            background-color: $main-red;
+            color: #fff;
+            display: grid;
+            place-items: center;
+            height: 2.8em;
+            @include sp {
+                width: 80vw;
+            }
+            &::after {
+                content: "";
+                position: absolute;
+                top: 50%;
+                translate: 0 -50%;
+                right: 1em;
+                width: 1em;
+                @include svg-iconArrowRight("ffffff");
+                rotate: 90deg;
+            }
+        }
+    }
+    & > article {
+        background-color: $main-red;
+        padding: 2em;
+        margin-top: 1.6em;
+        max-width: $articleMaxWidth;
+        @include sp {
+            padding: 4vw;
+        }
+        .view-block {
+            position: relative;
+            font-size: 1em;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            color: $base-white;
+            gap: 3em 1.4em;
+            @include sp {
+                grid-template-columns: unset;
+                grid-auto-flow: row;
+                gap: 14vw 0;
+            }
+            & > li {
+                position: relative;
+                font-size: 1em;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                gap: 1em 0;
+                .box_photo {
+                    position: relative;
+                    font-size: 1em;
+                    img {
+                        aspect-ratio: 1.5;
+                        object-fit: cover;
+                    }
+                    .link_info {
+                        position: absolute;
+                        inset: 0;
+                    }
+                }
+                .box_contents {
+                    font-size: 1em;
+                    display: flex;
+                    flex-direction: column;
+                    @include Serif;
+                    gap: 0.5em 0;
+                    justify-content: space-between;
+                    flex: 1;
+                    .title {
+                        font-size: FZ(20);
+                        font-weight: 600;
+                        letter-spacing: 0.12em;
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        .link_official {
+                            position: relative;
+                            font-size: 1em;
+                            width: 1em;
+                            @include svg-iconOyadoOfficial("ffffff");
+                        }
+                    }
+                    p {
+                        font-size: FZ(14);
+                        text-align: justify;
+                        letter-spacing: 0.08em;
+                        line-height: 1.6em;
+                        flex: 1;
+                    }
+                    .wrap_price {
+                        display: flex;
+                        align-items: center;
+                        justify-content: flex-end;
+                        font-size: 1em;
+                        &::before {
+                            flex: 1;
+                            content: "";
+                            height: 1px;
+                            border-top: solid 1px #5f5f5f;
+                            margin-right: 1em;
+                        }
+                        .inner {
+                            position: relative;
+                            font-size: 1em;
+                            display: flex;
+                            align-items: center;
+                            span {
+                                font-size: FZ(14);
+                                letter-spacing: 0.08em;
+                                &:first-of-type {
+                                    &::before {
+                                        content: "価格帯：";
+                                    }
+                                    &::after {
+                                        content: "~";
+                                        margin-inline: 0.2em;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .wrap_tel {
+                        font-size: 1em;
+                        display: flex;
+                        align-items: center;
+                        gap: 0 1.6em;
+                        a {
+                            font-size: FZ(14);
+                            letter-spacing: 0.08em;
+                            &.tel {
+                                &::before {
+                                    content: "Tel:";
+                                }
+                            }
+                            &.fax {
+                                &::before {
+                                    content: "Fax:";
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    h3 {
+        color: #fff;
+        font-size: FZ(32);
+        @include Serif;
+        letter-spacing: 0.08em;
+    }
+    .h3_sidebar {
+        font-size: FZ(16);
+        @include Serif;
+        color: #fff;
+        margin-top: 0.5em;
+        margin-bottom: 2em;
+        letter-spacing: 0.08em;
+    }
+    .wrap_tel {
+        border-top: 1px solid #707070;
+        padding-top: 0.5em;
+    }
+    .box_contents {
+        p {
+            max-height: 3lh;
+            position: relative;
+            overflow-y: hidden;
+            &::after {
+                content: "";
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: 70%;
+                background-image: linear-gradient(
+                    to top,
+                    rgba($main-red, 1),
+                    rgba($main-red, 0)
+                );
+            }
+        }
+    }
+    .view-block {
+        &.lang-en {
+            margin-top: 1em;
+            .box_contents {
+                .title {
+                    @include SunSerif;
+                    font-size: FZ(20);
+                    font-weight: 700;
+                }
+                p {
+                    max-height: unset;
+                    position: relative;
+                    overflow-y: hidden;
+                    @include SunSerif;
+                    line-height: 1.4em;
+                    &::after {
+                        display: none;
+                    }
+                }
+                .tel {
+                    &::before {
+                        content: "Phone:" !important;
+                    }
+                }
+            }
+        }
+    }
+}

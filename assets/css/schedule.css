@@ -1,0 +1,916 @@
+@charset "UTF-8";
+/* =================================
+ * 	ウィンドウ・フォントサイズ設定
+ * ------------------------------ */
+/* =================================
+ * フォント設定
+ * ------------------------------ */
+@font-face {
+  font-display: swap;
+  font-family: "Noto Sans JP";
+  @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap");
+}
+@font-face {
+  font-display: swap;
+  font-family: "Roboto";
+  @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+}
+/* フォント設定 */
+/* =================================
+ * カラー変数
+ * ------------------------------ */
+/* =================================
+ * レスポンシブ設定
+ * ------------------------------ */
+/* =================================
+ * ホバー処理
+ * ------------------------------ */
+/*==========================================================
+共通
+----------------------------------------------------------*/
+section {
+  display: flex;
+  flex-direction: column;
+  max-width: 84rem;
+  align-self: center;
+  margin-inline: 2em;
+  width: stretch;
+  padding-top: 2.4em;
+  padding-bottom: 2em;
+}
+@media (max-width: 480px) and (orientation: portrait) {
+  section {
+    margin-inline: 4vw;
+    padding-top: 4vw;
+    max-width: unset;
+    padding-bottom: 4vw;
+  }
+}
+section:not(:last-child) {
+  border-bottom: 1px solid #707070;
+}
+section h2 {
+  font-size: max(12px, 1.875em);
+  font-weight: 600;
+}
+@media (max-width: 480px) and (orientation: portrait) {
+  section h2 {
+    font-size: max(12px, 1.5em);
+  }
+}
+section h3 {
+  font-size: max(12px, 1.625em);
+  font-weight: 700;
+}
+@media (max-width: 480px) and (orientation: portrait) {
+  section h3 {
+    margin-inline: 4vw;
+  }
+}
+section .h3_sidebar {
+  font-size: max(12px, 0.875em);
+  display: flex;
+  flex-direction: column;
+  text-align: justify;
+  line-height: 2em;
+  margin-top: 2em;
+  gap: 0.5em 0;
+}
+@media (max-width: 480px) and (orientation: portrait) {
+  section .h3_sidebar {
+    font-size: max(12px, 1em);
+    line-height: 1.6em;
+    margin-top: 4vw;
+    margin-inline: 4vw;
+  }
+}
+
+.container-hero {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.container-hero img {
+  aspect-ratio: 5;
+  object-fit: cover;
+  width: 100%;
+}
+@media (max-width: 480px) and (orientation: portrait) {
+  .container-hero img {
+    aspect-ratio: 3;
+  }
+}
+
+/*=======================================
+年間スケジュール
+---------------------------------------*/
+.container_top {
+  font-family: "Zen Old Mincho", "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝Pro", "Hiragino Mincho Pro", "MS P明朝", "MS PMincho", serif;
+  font-weight: 400;
+  font-style: normal;
+  margin-top: 1em;
+}
+@media (max-width: 480px) and (orientation: portrait) {
+  .container_top {
+    margin-top: 0;
+  }
+}
+.container_top p {
+  font-size: max(12px, 1.125em);
+  margin-top: 1em;
+}
+@media (max-width: 480px) and (orientation: portrait) {
+  .container_top p {
+    font-size: max(12px, 1em);
+    text-align: justify;
+    line-height: 1.6em;
+  }
+}
+
+/*=======================================
+芽吹き・花盛り
+---------------------------------------*/
+.container_spring .block_head {
+  width: stretch;
+  font-size: inherit;
+  margin-top: 1em;
+}
+.container_spring .block_head .head img {
+  width: 100%;
+}
+.container_spring .movie_contents {
+  background-color: #000e21;
+  color: #fff;
+  font-size: inherit;
+  padding: 4em 1.8em 2em;
+  margin-bottom: 2em;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2em 2em;
+}
+@media (max-width: 480px) and (orientation: portrait) {
+  .container_spring .movie_contents {
+    padding: 4vw 4vw 16vw;
+    display: flex;
+    flex-direction: column;
+    gap: 8vw 0;
+  }
+}
+.container_spring .movie_contents h4 {
+  grid-column: span 2;
+  font-size: max(12px, 1.125em);
+  font-weight: 700;
+  text-indent: 0.5em;
+}
+@media (max-width: 480px) and (orientation: portrait) {
+  .container_spring .movie_contents h4 {
+    text-indent: unset;
+  }
+}
+.container_spring .movie_contents figure {
+  font-size: inherit;
+  position: relative;
+  cursor: pointer;
+}
+@media (max-width: 480px) and (orientation: portrait) {
+  .container_spring .movie_contents figure {
+    width: stretch;
+    margin-inline: 8vw;
+  }
+}
+.container_spring .movie_contents figure::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 3.6em;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="%23ffffff"><path d="M50,100h0C22.39,100,0,77.61,0,50h0C0,22.39,22.39,0,50,0h0c27.61,0,50,22.39,50,50h0c0,27.61-22.39,50-50,50ZM77.84,50l-44.31-25.58v51.16l44.31-25.58Z"/></svg>');
+  aspect-ratio: 1;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+  opacity: 0.8;
+}
+.container_spring .movie_contents figure figcaption {
+  font-size: max(12px, 0.875em);
+  margin-top: 0.5em;
+}
+.container_spring article {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: stretch;
+  gap: 2em 0;
+  padding: 2em 0 2em;
+}
+@media (max-width: 480px) and (orientation: portrait) {
+  .container_spring article {
+    padding: 4vw 4vw;
+  }
+}
+.container_spring article .title_month-number {
+  font-size: inherit;
+  width: 4.1em;
+}
+.container_spring article .list_month-event {
+  position: relative;
+  font-size: inherit;
+  display: flex;
+  flex-direction: column;
+  gap: 2em 0;
+}
+@media (max-width: 480px) and (orientation: portrait) {
+  .container_spring article .list_month-event {
+    gap: 8vw 0;
+  }
+}
+.container_spring article .list_month-event li {
+  display: flex;
+  gap: 0 1.4em;
+  font-size: inherit;
+}
+@media (max-width: 480px) and (orientation: portrait) {
+  .container_spring article .list_month-event li {
+    flex-direction: column;
+    gap: 2vw 0;
+  }
+}
+.container_spring article .list_month-event li .item_photo {
+  font-size: inherit;
+  width: 24em;
+}
+@media (max-width: 480px) and (orientation: portrait) {
+  .container_spring article .list_month-event li .item_photo {
+    width: stretch;
+  }
+}
+.container_spring article .list_month-event li .item_photo img {
+  aspect-ratio: 1.6;
+  object-fit: cover;
+}
+.container_spring article .list_month-event li .item_text {
+  font-size: inherit;
+  display: flex;
+  width: stretch;
+  flex-direction: column;
+  gap: 1em 0;
+  flex: 1;
+}
+@media (max-width: 480px) and (orientation: portrait) {
+  .container_spring article .list_month-event li .item_text {
+    gap: 1vw 0;
+  }
+}
+.container_spring article .list_month-event li .item_text h5 {
+  font-size: max(12px, 1.25em);
+  font-weight: 700;
+  line-height: 1.6em;
+}
+@media (max-width: 480px) and (orientation: portrait) {
+  .container_spring article .list_month-event li .item_text h5 {
+    font-size: max(12px, 1.125em);
+  }
+}
+.container_spring article .list_month-event li .item_text p {
+  font-size: max(12px, 0.875em);
+  line-height: 2em;
+  letter-spacing: 0.04em;
+  text-align: justify;
+}
+@media (max-width: 480px) and (orientation: portrait) {
+  .container_spring article .list_month-event li .item_text p {
+    font-size: max(12px, 1em);
+    line-height: 1.6em;
+  }
+}
+
+/*=======================================
+新緑
+---------------------------------------*/
+.container_early-summer .block_head {
+  width: stretch;
+  font-size: inherit;
+  margin-top: 1em;
+}
+.container_early-summer .block_head .head img {
+  width: 100%;
+}
+.container_early-summer .movie_contents {
+  background-color: #000e21;
+  color: #fff;
+  font-size: inherit;
+  padding: 4em 1.8em 2em;
+  margin-bottom: 2em;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2em 2em;
+}
+@media (max-width: 480px) and (orientation: portrait) {
+  .container_early-summer .movie_contents {
+    padding: 4vw 4vw 16vw;
+    display: flex;
+    flex-direction: column;
+    gap: 8vw 0;
+  }
+}
+.container_early-summer .movie_contents h4 {
+  grid-column: span 2;
+  font-size: max(12px, 1.125em);
+  font-weight: 700;
+  text-indent: 0.5em;
+}
+@media (max-width: 480px) and (orientation: portrait) {
+  .container_early-summer .movie_contents h4 {
+    text-indent: unset;
+  }
+}
+.container_early-summer .movie_contents figure {
+  font-size: inherit;
+  position: relative;
+  cursor: pointer;
+}
+@media (max-width: 480px) and (orientation: portrait) {
+  .container_early-summer .movie_contents figure {
+    width: stretch;
+    margin-inline: 8vw;
+  }
+}
+.container_early-summer .movie_contents figure::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 3.6em;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="%23ffffff"><path d="M50,100h0C22.39,100,0,77.61,0,50h0C0,22.39,22.39,0,50,0h0c27.61,0,50,22.39,50,50h0c0,27.61-22.39,50-50,50ZM77.84,50l-44.31-25.58v51.16l44.31-25.58Z"/></svg>');
+  aspect-ratio: 1;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+  opacity: 0.8;
+}
+.container_early-summer .movie_contents figure figcaption {
+  font-size: max(12px, 0.875em);
+  margin-top: 0.5em;
+}
+.container_early-summer article {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: stretch;
+  gap: 2em 0;
+  padding: 2em 0 2em;
+}
+@media (max-width: 480px) and (orientation: portrait) {
+  .container_early-summer article {
+    padding: 4vw 4vw;
+  }
+}
+.container_early-summer article .title_month-number {
+  font-size: inherit;
+  width: 4.1em;
+}
+.container_early-summer article .list_month-event {
+  position: relative;
+  font-size: inherit;
+  display: flex;
+  flex-direction: column;
+  gap: 2em 0;
+}
+@media (max-width: 480px) and (orientation: portrait) {
+  .container_early-summer article .list_month-event {
+    gap: 8vw 0;
+  }
+}
+.container_early-summer article .list_month-event li {
+  display: flex;
+  gap: 0 1.4em;
+  font-size: inherit;
+}
+@media (max-width: 480px) and (orientation: portrait) {
+  .container_early-summer article .list_month-event li {
+    flex-direction: column;
+    gap: 2vw 0;
+  }
+}
+.container_early-summer article .list_month-event li .item_photo {
+  font-size: inherit;
+  width: 24em;
+}
+@media (max-width: 480px) and (orientation: portrait) {
+  .container_early-summer article .list_month-event li .item_photo {
+    width: stretch;
+  }
+}
+.container_early-summer article .list_month-event li .item_photo img {
+  aspect-ratio: 1.6;
+  object-fit: cover;
+}
+.container_early-summer article .list_month-event li .item_text {
+  font-size: inherit;
+  display: flex;
+  width: stretch;
+  flex-direction: column;
+  gap: 1em 0;
+  flex: 1;
+}
+@media (max-width: 480px) and (orientation: portrait) {
+  .container_early-summer article .list_month-event li .item_text {
+    gap: 1vw 0;
+  }
+}
+.container_early-summer article .list_month-event li .item_text h5 {
+  font-size: max(12px, 1.25em);
+  font-weight: 700;
+  line-height: 1.6em;
+}
+@media (max-width: 480px) and (orientation: portrait) {
+  .container_early-summer article .list_month-event li .item_text h5 {
+    font-size: max(12px, 1.125em);
+  }
+}
+.container_early-summer article .list_month-event li .item_text p {
+  font-size: max(12px, 0.875em);
+  line-height: 2em;
+  letter-spacing: 0.04em;
+  text-align: justify;
+}
+@media (max-width: 480px) and (orientation: portrait) {
+  .container_early-summer article .list_month-event li .item_text p {
+    font-size: max(12px, 1em);
+    line-height: 1.6em;
+  }
+}
+
+/*=======================================
+深緑
+---------------------------------------*/
+.container_summer .block_head {
+  width: stretch;
+  font-size: inherit;
+  margin-top: 1em;
+}
+.container_summer .block_head .head img {
+  width: 100%;
+}
+.container_summer .movie_contents {
+  background-color: #000e21;
+  color: #fff;
+  font-size: inherit;
+  padding: 4em 1.8em 2em;
+  margin-bottom: 2em;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2em 2em;
+}
+@media (max-width: 480px) and (orientation: portrait) {
+  .container_summer .movie_contents {
+    padding: 4vw 4vw 16vw;
+    display: flex;
+    flex-direction: column;
+    gap: 8vw 0;
+  }
+}
+.container_summer .movie_contents h4 {
+  grid-column: span 2;
+  font-size: max(12px, 1.125em);
+  font-weight: 700;
+  text-indent: 0.5em;
+}
+@media (max-width: 480px) and (orientation: portrait) {
+  .container_summer .movie_contents h4 {
+    text-indent: unset;
+  }
+}
+.container_summer .movie_contents figure {
+  font-size: inherit;
+  position: relative;
+  cursor: pointer;
+}
+@media (max-width: 480px) and (orientation: portrait) {
+  .container_summer .movie_contents figure {
+    width: stretch;
+    margin-inline: 8vw;
+  }
+}
+.container_summer .movie_contents figure::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 3.6em;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="%23ffffff"><path d="M50,100h0C22.39,100,0,77.61,0,50h0C0,22.39,22.39,0,50,0h0c27.61,0,50,22.39,50,50h0c0,27.61-22.39,50-50,50ZM77.84,50l-44.31-25.58v51.16l44.31-25.58Z"/></svg>');
+  aspect-ratio: 1;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+  opacity: 0.8;
+}
+.container_summer .movie_contents figure figcaption {
+  font-size: max(12px, 0.875em);
+  margin-top: 0.5em;
+}
+.container_summer article {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: stretch;
+  gap: 2em 0;
+  padding: 2em 0 2em;
+}
+@media (max-width: 480px) and (orientation: portrait) {
+  .container_summer article {
+    padding: 4vw 4vw;
+  }
+}
+.container_summer article .title_month-number {
+  font-size: inherit;
+  width: 4.1em;
+}
+.container_summer article .list_month-event {
+  position: relative;
+  font-size: inherit;
+  display: flex;
+  flex-direction: column;
+  gap: 2em 0;
+}
+@media (max-width: 480px) and (orientation: portrait) {
+  .container_summer article .list_month-event {
+    gap: 8vw 0;
+  }
+}
+.container_summer article .list_month-event li {
+  display: flex;
+  gap: 0 1.4em;
+  font-size: inherit;
+}
+@media (max-width: 480px) and (orientation: portrait) {
+  .container_summer article .list_month-event li {
+    flex-direction: column;
+    gap: 2vw 0;
+  }
+}
+.container_summer article .list_month-event li .item_photo {
+  font-size: inherit;
+  width: 24em;
+}
+@media (max-width: 480px) and (orientation: portrait) {
+  .container_summer article .list_month-event li .item_photo {
+    width: stretch;
+  }
+}
+.container_summer article .list_month-event li .item_photo img {
+  aspect-ratio: 1.6;
+  object-fit: cover;
+}
+.container_summer article .list_month-event li .item_text {
+  font-size: inherit;
+  display: flex;
+  width: stretch;
+  flex-direction: column;
+  gap: 1em 0;
+  flex: 1;
+}
+@media (max-width: 480px) and (orientation: portrait) {
+  .container_summer article .list_month-event li .item_text {
+    gap: 1vw 0;
+  }
+}
+.container_summer article .list_month-event li .item_text h5 {
+  font-size: max(12px, 1.25em);
+  font-weight: 700;
+  line-height: 1.6em;
+}
+@media (max-width: 480px) and (orientation: portrait) {
+  .container_summer article .list_month-event li .item_text h5 {
+    font-size: max(12px, 1.125em);
+  }
+}
+.container_summer article .list_month-event li .item_text p {
+  font-size: max(12px, 0.875em);
+  line-height: 2em;
+  letter-spacing: 0.04em;
+  text-align: justify;
+}
+@media (max-width: 480px) and (orientation: portrait) {
+  .container_summer article .list_month-event li .item_text p {
+    font-size: max(12px, 1em);
+    line-height: 1.6em;
+  }
+}
+
+/*=======================================
+実り・紅葉
+---------------------------------------*/
+.container_autumn .block_head {
+  width: stretch;
+  font-size: inherit;
+  margin-top: 1em;
+}
+.container_autumn .block_head .head img {
+  width: 100%;
+}
+.container_autumn .movie_contents {
+  background-color: #000e21;
+  color: #fff;
+  font-size: inherit;
+  padding: 4em 1.8em 2em;
+  margin-bottom: 2em;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2em 2em;
+}
+@media (max-width: 480px) and (orientation: portrait) {
+  .container_autumn .movie_contents {
+    padding: 4vw 4vw 16vw;
+    display: flex;
+    flex-direction: column;
+    gap: 8vw 0;
+  }
+}
+.container_autumn .movie_contents h4 {
+  grid-column: span 2;
+  font-size: max(12px, 1.125em);
+  font-weight: 700;
+  text-indent: 0.5em;
+}
+@media (max-width: 480px) and (orientation: portrait) {
+  .container_autumn .movie_contents h4 {
+    text-indent: unset;
+  }
+}
+.container_autumn .movie_contents figure {
+  font-size: inherit;
+  position: relative;
+  cursor: pointer;
+}
+@media (max-width: 480px) and (orientation: portrait) {
+  .container_autumn .movie_contents figure {
+    width: stretch;
+    margin-inline: 8vw;
+  }
+}
+.container_autumn .movie_contents figure::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 3.6em;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="%23ffffff"><path d="M50,100h0C22.39,100,0,77.61,0,50h0C0,22.39,22.39,0,50,0h0c27.61,0,50,22.39,50,50h0c0,27.61-22.39,50-50,50ZM77.84,50l-44.31-25.58v51.16l44.31-25.58Z"/></svg>');
+  aspect-ratio: 1;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+  opacity: 0.8;
+}
+.container_autumn .movie_contents figure figcaption {
+  font-size: max(12px, 0.875em);
+  margin-top: 0.5em;
+}
+.container_autumn article {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: stretch;
+  gap: 2em 0;
+  padding: 2em 0 2em;
+}
+@media (max-width: 480px) and (orientation: portrait) {
+  .container_autumn article {
+    padding: 4vw 4vw;
+  }
+}
+.container_autumn article .title_month-number {
+  font-size: inherit;
+  width: 4.1em;
+}
+.container_autumn article .list_month-event {
+  position: relative;
+  font-size: inherit;
+  display: flex;
+  flex-direction: column;
+  gap: 2em 0;
+}
+@media (max-width: 480px) and (orientation: portrait) {
+  .container_autumn article .list_month-event {
+    gap: 8vw 0;
+  }
+}
+.container_autumn article .list_month-event li {
+  display: flex;
+  gap: 0 1.4em;
+  font-size: inherit;
+}
+@media (max-width: 480px) and (orientation: portrait) {
+  .container_autumn article .list_month-event li {
+    flex-direction: column;
+    gap: 2vw 0;
+  }
+}
+.container_autumn article .list_month-event li .item_photo {
+  font-size: inherit;
+  width: 24em;
+}
+@media (max-width: 480px) and (orientation: portrait) {
+  .container_autumn article .list_month-event li .item_photo {
+    width: stretch;
+  }
+}
+.container_autumn article .list_month-event li .item_photo img {
+  aspect-ratio: 1.6;
+  object-fit: cover;
+}
+.container_autumn article .list_month-event li .item_text {
+  font-size: inherit;
+  display: flex;
+  width: stretch;
+  flex-direction: column;
+  gap: 1em 0;
+  flex: 1;
+}
+@media (max-width: 480px) and (orientation: portrait) {
+  .container_autumn article .list_month-event li .item_text {
+    gap: 1vw 0;
+  }
+}
+.container_autumn article .list_month-event li .item_text h5 {
+  font-size: max(12px, 1.25em);
+  font-weight: 700;
+  line-height: 1.6em;
+}
+@media (max-width: 480px) and (orientation: portrait) {
+  .container_autumn article .list_month-event li .item_text h5 {
+    font-size: max(12px, 1.125em);
+  }
+}
+.container_autumn article .list_month-event li .item_text p {
+  font-size: max(12px, 0.875em);
+  line-height: 2em;
+  letter-spacing: 0.04em;
+  text-align: justify;
+}
+@media (max-width: 480px) and (orientation: portrait) {
+  .container_autumn article .list_month-event li .item_text p {
+    font-size: max(12px, 1em);
+    line-height: 1.6em;
+  }
+}
+
+/*=======================================
+落葉・雪景色
+---------------------------------------*/
+.container_winter .block_head {
+  width: stretch;
+  font-size: inherit;
+  margin-top: 1em;
+}
+.container_winter .block_head .head img {
+  width: 100%;
+}
+.container_winter .movie_contents {
+  background-color: #000e21;
+  color: #fff;
+  font-size: inherit;
+  padding: 4em 1.8em 2em;
+  margin-bottom: 2em;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2em 2em;
+}
+@media (max-width: 480px) and (orientation: portrait) {
+  .container_winter .movie_contents {
+    padding: 4vw 4vw 16vw;
+    display: flex;
+    flex-direction: column;
+    gap: 8vw 0;
+  }
+}
+.container_winter .movie_contents h4 {
+  grid-column: span 2;
+  font-size: max(12px, 1.125em);
+  font-weight: 700;
+  text-indent: 0.5em;
+}
+@media (max-width: 480px) and (orientation: portrait) {
+  .container_winter .movie_contents h4 {
+    text-indent: unset;
+  }
+}
+.container_winter .movie_contents figure {
+  font-size: inherit;
+  position: relative;
+  cursor: pointer;
+}
+@media (max-width: 480px) and (orientation: portrait) {
+  .container_winter .movie_contents figure {
+    width: stretch;
+    margin-inline: 8vw;
+  }
+}
+.container_winter .movie_contents figure::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 3.6em;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="%23ffffff"><path d="M50,100h0C22.39,100,0,77.61,0,50h0C0,22.39,22.39,0,50,0h0c27.61,0,50,22.39,50,50h0c0,27.61-22.39,50-50,50ZM77.84,50l-44.31-25.58v51.16l44.31-25.58Z"/></svg>');
+  aspect-ratio: 1;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+  opacity: 0.8;
+}
+.container_winter .movie_contents figure figcaption {
+  font-size: max(12px, 0.875em);
+  margin-top: 0.5em;
+}
+.container_winter article {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: stretch;
+  gap: 2em 0;
+  padding: 2em 0 2em;
+}
+@media (max-width: 480px) and (orientation: portrait) {
+  .container_winter article {
+    padding: 4vw 4vw;
+  }
+}
+.container_winter article .title_month-number {
+  font-size: inherit;
+  width: 4.1em;
+}
+.container_winter article .list_month-event {
+  position: relative;
+  font-size: inherit;
+  display: flex;
+  flex-direction: column;
+  gap: 2em 0;
+}
+@media (max-width: 480px) and (orientation: portrait) {
+  .container_winter article .list_month-event {
+    gap: 8vw 0;
+  }
+}
+.container_winter article .list_month-event li {
+  display: flex;
+  gap: 0 1.4em;
+  font-size: inherit;
+}
+@media (max-width: 480px) and (orientation: portrait) {
+  .container_winter article .list_month-event li {
+    flex-direction: column;
+    gap: 2vw 0;
+  }
+}
+.container_winter article .list_month-event li .item_photo {
+  font-size: inherit;
+  width: 24em;
+}
+@media (max-width: 480px) and (orientation: portrait) {
+  .container_winter article .list_month-event li .item_photo {
+    width: stretch;
+  }
+}
+.container_winter article .list_month-event li .item_photo img {
+  aspect-ratio: 1.6;
+  object-fit: cover;
+}
+.container_winter article .list_month-event li .item_text {
+  font-size: inherit;
+  display: flex;
+  width: stretch;
+  flex-direction: column;
+  gap: 1em 0;
+  flex: 1;
+}
+@media (max-width: 480px) and (orientation: portrait) {
+  .container_winter article .list_month-event li .item_text {
+    gap: 1vw 0;
+  }
+}
+.container_winter article .list_month-event li .item_text h5 {
+  font-size: max(12px, 1.25em);
+  font-weight: 700;
+  line-height: 1.6em;
+}
+@media (max-width: 480px) and (orientation: portrait) {
+  .container_winter article .list_month-event li .item_text h5 {
+    font-size: max(12px, 1.125em);
+  }
+}
+.container_winter article .list_month-event li .item_text p {
+  font-size: max(12px, 0.875em);
+  line-height: 2em;
+  letter-spacing: 0.04em;
+  text-align: justify;
+}
+@media (max-width: 480px) and (orientation: portrait) {
+  .container_winter article .list_month-event li .item_text p {
+    font-size: max(12px, 1em);
+    line-height: 1.6em;
+  }
+}
+
+/*# sourceMappingURL=schedule.css.map */

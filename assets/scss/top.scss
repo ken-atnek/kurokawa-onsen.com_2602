@@ -22,15 +22,23 @@
     position: relative;
     display: flex;
     flex-direction: column;
-    align-items: center;
     img {
         aspect-ratio: 1366/474;
         object-fit: cover;
+        align-self: stretch;
+        width: 100%;
     }
     article {
         display: flex;
         max-width: $articleMaxWidth;
         padding-block: 3rem;
+        align-self: center;
+        @include sp {
+            flex-direction: column;
+            max-width: unset;
+            padding-inline: 4vw;
+            align-items: center;
+        }
         h2 {
             font-size: FZ(24);
             font-weight: 600;
@@ -38,6 +46,11 @@
             border-right: 3px solid #fe3101;
             padding-block: 1.8rem;
             padding-right: 1em;
+            @include sp {
+                font-size: FZ(18);
+                border-right: unset;
+                padding-right: unset;
+            }
         }
         .box-details {
             align-self: center;
@@ -53,6 +66,9 @@
             a {
                 font-size: FZ(20);
                 letter-spacing: 0.1em;
+                @include sp {
+                    font-size: FZ(16);
+                }
             }
         }
     }
@@ -63,6 +79,9 @@
     flex-direction: column;
     align-items: center;
     padding: 7.4rem 4vw 8.3rem;
+    @include sp {
+        padding: 6vw 4vw 6vw;
+    }
     .item-h2 {
         color: $base-white;
     }
@@ -171,6 +190,9 @@
     flex-direction: column;
     align-items: center;
     padding: 4.8rem 4vw 7.2rem;
+    @include sp {
+        padding: 6vw 4vw 6vw;
+    }
     .block_head-mage {
         position: relative;
         font-size: inherit;
@@ -212,6 +234,9 @@
     align-items: center;
     padding: 4.8rem 4vw 7.2rem;
     background: url(../image/top/bg-overview.webp) no-repeat center center/cover;
+    @include sp {
+        padding: 6vw 4vw 6vw;
+    }
     dl {
         position: relative;
         width: 100%;
@@ -222,12 +247,20 @@
         display: grid;
         grid-template-columns: auto 1fr;
         margin-top: 4rem;
+        @include sp {
+            grid-template-columns: unset;
+            grid-auto-flow: row;
+        }
         div {
             position: relative;
             font-size: inherit;
             grid-column: span 2;
             display: grid;
             grid-template-columns: subgrid;
+            @include sp {
+                grid-template-columns: unset;
+                grid-auto-flow: row;
+            }
             &:not(:last-of-type) {
                 border-bottom: 1px solid;
             }
@@ -238,12 +271,20 @@
                 align-items: center;
                 justify-content: flex-end;
                 padding: 4rem 6rem;
+                @include sp {
+                    padding: 4vw;
+                    justify-content: center;
+                }
             }
             dd {
                 font-size: FZ(20);
                 display: flex;
                 flex-direction: column;
                 padding: 4rem 6rem;
+                @include sp {
+                    padding: 4vw;
+                    align-items: center;
+                }
                 a,
                 span,
                 address {

@@ -6,7 +6,7 @@
     <meta charset="UTF-8" />
     <title>黒川温泉観光協会</title>
     <!-- TODO 公開時に切り替えること -->
-    <meta name="robots" content="noindex,nofollow" />
+    <meta name="robots" content="index,follow" />
 
     <meta name="description" content="黒川温泉観光協会のサイトです。" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -39,16 +39,7 @@
   </head>
 
   <body>
-    <header>
-      <h1>黒川温泉観光協会</h1>
-      <nav>
-        <a href="#">加盟店一覧</a>
-        <a href="#">年感スケジュール</a>
-        <a href="#">交通状況</a>
-        <a href="#">交通アクセス</a>
-      </nav>
-      <a href="#" class="link-contact">お問い合わせ</a>
-    </header>
+    <!--#include virtual="./inc_header.php"-->
     <main>
       <section class="container-hero">
         <picture>
@@ -59,7 +50,9 @@
           <h2>新着情報</h2>
           <div class="box-details">
             <span>2025.12.16</span>
-            <a href="#">褐-aka-さんの情報を掲載しました。</a>
+            <a href="./shop-details/detail01.html"
+              >褐-aka-さんの情報を掲載しました。</a
+            >
           </div>
         </article>
       </section>
@@ -79,7 +72,7 @@
                   alt="褐-aka-の外観"
                 />
               </picture>
-              <a href="#" class="link_info"></a>
+              <a href="./shop-details/detail01.html" class="link_info"></a>
             </div>
             <div class="box_contents">
               <div class="title">褐-aka-</div>
@@ -104,7 +97,7 @@
                   alt="わろく屋の外観"
                 />
               </picture>
-              <a href="#" class="link_info"></a>
+              <a href="./shop-details/detail11.html" class="link_info"></a>
             </div>
             <div class="box_contents">
               <div class="title">わろく屋</div>
@@ -129,7 +122,7 @@
                   alt="Kurokawa Onsen 湯旅屋 黒川堂の外観"
                 />
               </picture>
-              <a href="./detail.php?intSKey=49" class="link_info"></a>
+              <a href="./shop-details/detail15.html" class="link_info"></a>
             </div>
             <div class="box_contents">
               <div class="title">Kurokawa Onsen 湯旅屋 黒川堂</div>
@@ -144,7 +137,7 @@
             </div>
           </li>
         </ul>
-        <a href="#" class="link-page">加盟店一覧を見る</a>
+        <a href="./shop-list/" class="link-page">加盟店一覧を見る</a>
       </section>
       <section class="container-map">
         <h2 class="item-h2">MAP</h2>
@@ -182,21 +175,19 @@
             </dd>
           </div>
           <div>
+            <dt>役員</dt>
+            <dd>
+              <span>　会長：音成　貴道</span><span>副会長：北里　竜紀</span>
+            </dd>
+          </div>
+          <div>
             <dt>電話番号</dt>
             <dd><a href="tel:0967488130">0967-48-8130</a></dd>
           </div>
         </dl>
       </section>
     </main>
-    <footer>
-      <div class="title">黒川温泉観光協会</div>
-      <nav>
-        <a href="#">加盟店一覧</a>
-        <a href="#">年感スケジュール</a>
-        <a href="#">交通状況</a>
-        <a href="#">交通アクセス</a>
-      </nav>
-      <a href="#" class="link-contact">お問い合わせ</a>
-    </footer>
+    <!--#include virtual="./inc_footer.php"-->
+    <script type="text/javascript" src="./assets/js/common.js"></script>
   </body>
 </html>

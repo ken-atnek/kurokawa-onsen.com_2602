@@ -97,30 +97,71 @@ header {
     height: 10rem;
     padding-left: 6vw;
     gap: 0 3em;
+    @include sp {
+        justify-content: center;
+        height: unset;
+        padding-block: 4vw;
+        z-index: 100;
+    }
     h1 {
         font-size: FZ(32);
         font-weight: 700;
         align-self: center;
         letter-spacing: 0.1em;
-    }
-    nav {
-        margin-left: auto;
-        align-self: center;
-        font-size: inherit;
-        display: flex;
-        align-items: center;
-        gap: 0 2em;
         a {
-            font-size: FZ(18);
-            letter-spacing: 0.1em;
+            font-size: inherit;
+        }
+        @include sp {
+            margin-right: 1em;
         }
     }
-    .link-contact {
-        background-color: $main-red;
-        font-size: FZ(16);
-        @include flex-center;
-        color: $base-white;
-        padding-inline: 2em;
+    .box-mobile {
+        font-size: inherit;
+        display: contents;
+        @include sp {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            translate: 100vw;
+            width: 100%;
+            background-color: $base-white;
+            padding-block: 20vw;
+            transition: 0.3s ease-out;
+            &.active {
+                translate: 0;
+            }
+        }
+        nav {
+            margin-left: auto;
+            align-self: center;
+            font-size: inherit;
+            display: flex;
+            align-items: center;
+            gap: 0 2em;
+            @include sp {
+                flex-direction: column;
+                gap: 4vw 0;
+                margin-left: unset;
+            }
+            a {
+                font-size: FZ(18);
+                letter-spacing: 0.1em;
+            }
+        }
+        .link-contact {
+            background-color: $main-red;
+            font-size: FZ(16);
+            @include flex-center;
+            color: $base-white;
+            padding-inline: 2em;
+            @include sp {
+                margin-top: 10vw;
+                height: 10vw;
+            }
+        }
     }
 }
 footer {
@@ -132,6 +173,9 @@ footer {
     color: $base-white;
     padding: 4.6rem 4vw;
     gap: 0 3em;
+    @include sp {
+        flex-direction: column;
+    }
     .title {
         font-size: FZ(32);
         font-weight: 700;
@@ -145,6 +189,9 @@ footer {
         display: flex;
         align-items: center;
         gap: 0 2em;
+        @include sp {
+            display: none;
+        }
         a {
             font-size: FZ(18);
             letter-spacing: 0.1em;
@@ -157,5 +204,93 @@ footer {
         color: $main-red;
         padding-inline: 2em;
         height: 10rem;
+        @include sp {
+            height: 8vw;
+            margin-top: 6vw;
+        }
+    }
+}
+
+.item-h2 {
+    position: relative;
+    font-size: FZ(24);
+    font-weight: 700;
+    letter-spacing: 0.5em;
+    padding-top: 3rem;
+    align-self: center;
+    margin-top: 5rem;
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 50%;
+        translate: -50%;
+        width: 6rem;
+        height: 3px;
+        background-color: #fe3101;
+    }
+}
+/*==========================================
+	ハンバーガーメニュー
+==========================================*/
+.hamburger-button {
+    position: absolute;
+    --boxSize: 8vw;
+    width: var(--boxSize);
+    right: 2vw;
+    top: 50%;
+    translate: 0 -50%;
+    aspect-ratio: 1;
+    z-index: 100;
+    transition: 0.8s ease-out;
+    font-size: 1em;
+    border-radius: 0.5rem;
+    display: none;
+    @include sp {
+        display: block;
+    }
+    span {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 60%;
+        height: 2px;
+        background-color: $main-red;
+        transition: 0.5s ease-out;
+        @include sp {
+            width: 80%;
+        }
+        &:nth-of-type(1) {
+            transform: translate(-50%, calc(-50% - 1.4vw));
+            @include sp {
+                transform: translate(-50%, calc(-50% - 2vw));
+            }
+        }
+        &:nth-of-type(2) {
+            transform: translate(-50%, -50%);
+            transition-delay: 0.3s;
+        }
+        &:nth-of-type(3) {
+            transform: translate(-50%, calc(-50% + 1.4vw));
+            @include sp {
+                transform: translate(-50%, calc(-50% + 2vw));
+            }
+        }
+    }
+    &.active {
+        span {
+            transition: 0.3s ease-out;
+            // background-color: $BaseWhite;
+            &:nth-of-type(1) {
+                transform: translate(-50%, -50%) rotate(135deg);
+            }
+            &:nth-of-type(2) {
+                transform: translate(100%, -50%);
+                opacity: 0;
+            }
+            &:nth-of-type(3) {
+                transform: translate(-50%, -50%) rotate(-135deg);
+            }
+        }
     }
 }

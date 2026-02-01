@@ -1,0 +1,341 @@
+@use "variable" as *;
+@use "mixin" as *;
+@use "svg" as *;
+
+/*=======================================
+加盟店詳細
+---------------------------------------*/
+h2 {
+    font-size: FZ(32);
+    text-align: center;
+    margin-block: 1rem;
+}
+.container01 {
+    font-size: inherit;
+    @include sp {
+        background-color: #000000;
+        padding-bottom: 2vw;
+    }
+    .box_head {
+        position: relative;
+        font-size: inherit;
+        background-color: $main-black;
+        img {
+            position: relative;
+            aspect-ratio: 1.73;
+            object-fit: cover;
+        }
+        .wrap_shop-info {
+            position: relative;
+            font-size: 1em;
+            padding-top: 2em;
+            padding-inline: 2em;
+            color: #fff;
+            padding-bottom: 2em;
+            display: flex;
+            flex-direction: column;
+            z-index: +1;
+            @include sp {
+                position: relative;
+                left: unset;
+                bottom: unset;
+                padding-bottom: unset;
+                align-items: center;
+                padding: 6vw 4vw 2vw;
+            }
+            .shop-name {
+                @include Serif;
+                font-size: FZ(36);
+                font-weight: 500;
+                letter-spacing: 0.08em;
+            }
+            .shop-comment {
+                @include Serif;
+                font-size: FZ(18);
+                letter-spacing: 0.04em;
+                margin-top: 0.5em;
+                max-width: 70vw;
+                @include sp {
+                    max-width: unset;
+                    margin-top: 4vw;
+                    font-size: FZ(18);
+                    line-height: 1.8em;
+                    text-align: justify;
+                }
+            }
+            dl {
+                position: relative;
+                border-top: 1px solid;
+                align-self: flex-start;
+                display: flex;
+                gap: 0 1em;
+                font-size: 1em;
+                padding-top: 0.5em;
+                margin-top: 0.5em;
+                @include sp {
+                    flex-direction: column;
+                    gap: 0;
+                    align-self: center;
+                    margin-top: 4vw;
+                    border: unset;
+                }
+                & > div {
+                    font-size: 1em;
+                    display: flex;
+                    flex-direction: column;
+                    @include sp {
+                        align-items: center;
+                        flex-direction: row;
+                        gap: 0 4vw;
+                    }
+                    &.item_fax {
+                        @include sp {
+                            display: none;
+                        }
+                    }
+                    dt {
+                        font-size: FZ(14);
+                        &.title_web {
+                            @include sp {
+                                display: none;
+                            }
+                        }
+                    }
+                    dd {
+                        font-size: 1em;
+                        a {
+                            font-size: FZ(14);
+                        }
+                    }
+                }
+            }
+        }
+    }
+    ul {
+        position: relative;
+        background-color: $main-black;
+        font-size: 1em;
+        padding: 2em;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1em;
+        @include sp {
+            padding: 2vw 4vw;
+            gap: 4vw 0;
+            background-color: transparent;
+            grid-template-columns: unset;
+            grid-auto-flow: row;
+            justify-content: center;
+        }
+        li {
+            max-height: 36rem;
+            position: relative;
+            @include sp {
+                max-height: unset;
+                width: 100%;
+            }
+            img {
+                aspect-ratio: 1.78;
+                object-fit: cover;
+                height: 100%;
+            }
+            span {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                background-color: $main-black;
+                color: #fff;
+                font-size: FZ(16);
+                padding: 0.2em 1em;
+            }
+        }
+    }
+}
+.container02 {
+    padding: 3em 2em;
+    display: flex;
+    justify-content: center;
+    & > dl {
+        display: flex;
+        flex-direction: column;
+        font-size: inherit;
+        border-top: solid 1px #b6b6b6;
+        & > div {
+            border-bottom: solid 1px #b6b6b6;
+            font-size: inherit;
+            display: flex;
+            flex-direction: column;
+            gap: 1em 0;
+            padding-block: 2em;
+            dt {
+                font-size: FZ(16);
+                font-weight: 700;
+            }
+            dd {
+                font-size: FZ(16);
+                display: flex;
+                align-items: center;
+                gap: 0 1em;
+                @include sp {
+                    flex-direction: column;
+                    gap: 2vw 0;
+                    align-items: flex-start;
+                }
+                address {
+                    font-size: inherit;
+                }
+            }
+        }
+    }
+}
+.container03 {
+    display: flex;
+    flex-direction: column;
+    & > article {
+        background-color: $main-black;
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 6em 2em 5em;
+        @include sp {
+            padding-inline: 4vw;
+        }
+        h3 {
+            position: relative;
+            font-size: FZ(32);
+            @include Serif;
+            letter-spacing: 0.2em;
+            &::before {
+                content: "";
+                position: absolute;
+                left: 50%;
+                translate: -50%;
+                bottom: calc(100% + 0.3em);
+                width: 1em;
+                @include svg-iconDragonfly("ffffff");
+            }
+        }
+        & > ul {
+            position: relative;
+            font-size: inherit;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0 3em;
+            margin-top: 3em;
+            margin-bottom: 5em;
+            @include sp {
+                grid-template-columns: unset;
+                grid-auto-flow: row;
+                gap: 6vw 0;
+            }
+            & > li {
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                font-size: inherit;
+                gap: 1em 0;
+                img {
+                    aspect-ratio: 1.6;
+                    object-fit: cover;
+                }
+                h4 {
+                    font-size: FZ(18);
+                    font-weight: 700;
+                }
+                p {
+                    font-size: FZ(14);
+                    text-align: justify;
+                    letter-spacing: 0.04em;
+                    line-height: 1.6em;
+                }
+            }
+        }
+        & > nav {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            font-size: inherit;
+            gap: 1em;
+            margin-bottom: 1em;
+            a {
+                position: relative;
+                border: 1px solid $base-white;
+                font-size: FZ(18);
+                padding: 0.5em 3em 0.5em 2em;
+                transition: 0.3s ease-out;
+                @include sp {
+                    width: 100%;
+                    padding-left: 4vw;
+                }
+                &::after {
+                    content: "";
+                    position: absolute;
+                    top: 50%;
+                    translate: 0 -50%;
+                    right: 1em;
+                    width: 0.8em;
+                    @include svg-iconArrowRight("ffffff");
+                }
+            }
+        }
+    }
+}
+.container04 {
+    display: flex;
+    flex-direction: column;
+    padding: 3em 2em;
+    @include sp {
+        padding: 4vw 4vw;
+    }
+    .shop-name {
+        font-size: FZ(16);
+        font-weight: 700;
+    }
+    dl {
+        position: relative;
+        align-self: flex-start;
+        display: flex;
+        gap: 0 1em;
+        font-size: 1em;
+        padding-top: 0.5em;
+        margin-top: 0.5em;
+        @include sp {
+            flex-direction: column;
+            gap: 0;
+            // align-self: center;
+            margin-top: 4vw;
+            border: unset;
+        }
+        & > div {
+            font-size: 1em;
+            display: flex;
+            flex-direction: column;
+            @include sp {
+                align-items: center;
+                flex-direction: row;
+                gap: 0 4vw;
+            }
+            &.item_fax {
+                @include sp {
+                    display: none;
+                }
+            }
+            dt {
+                font-size: FZ(12);
+                &.title_web {
+                    @include sp {
+                        display: none;
+                    }
+                }
+            }
+            dd {
+                font-size: 1em;
+                a {
+                    font-size: FZ(12);
+                }
+            }
+        }
+    }
+}
